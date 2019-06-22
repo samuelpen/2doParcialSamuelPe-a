@@ -19,7 +19,8 @@ namespace AppParcial.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            string DbPath = FileAccess.GetLocalFilePath("notasdesamuel.db3");
+            LoadApplication(new App(DbPath));
         }
     }
 }

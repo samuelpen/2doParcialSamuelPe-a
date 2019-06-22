@@ -1,17 +1,19 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppParcial.View;
+using AppParcial.ViewModel;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppParcial
 {
     public partial class App : Application
     {
-        public App()
+        public App(string filename)
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            NotesViewModel.Inicializador(filename);
+            MainPage = new NotesView();
         }
 
         protected override void OnStart()

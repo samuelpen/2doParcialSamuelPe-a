@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppParcial.View.NotesView">
+    <ContentPage.Content>
+        
+        <StackLayout
+            
+            Orientation="Vertical"
+            Padding="30"
+            Spacing="15">
+
+
+            <Label
+                Text="Notas de Samuel Peña"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                FontSize="Medium"/>
+
+            <Label
+                Text="Nota"
+                FontSize="Medium"/>
+
+            <Entry
+                x:Name="dContents"
+                Placeholder="Contents"
+                Text="{Binding Contents}"/>
+
+            <Button
+                x:Name="bInsertar"
+                Text="Ingresar"
+                Clicked="BInsertar_Clicked"/>
+
+            <Button
+                x:Name="bListar"
+                Text="Mostrar Notas"
+                Clicked="BListar_Clicked"/>
+
+            <Label
+                x:Name="StatusMessage"
+                FontSize="Large"/>
+
+            <ListView x:Name="listanotas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Contents}"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding CreatedDate}"/>
+                                <Label Grid.Column="2"
+                                       Text="{Binding ModifiedDate}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

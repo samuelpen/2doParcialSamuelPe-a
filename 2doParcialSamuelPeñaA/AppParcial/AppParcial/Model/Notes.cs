@@ -4,7 +4,7 @@ using System.Text;
 using SQLite;
 namespace AppParcial.Model
 {
-    public class Notes
+    public class Notes ///Clase de NotasBE
     {
         [PrimaryKey, AutoIncrement]
         public int NotesId { get; set; }
